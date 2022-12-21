@@ -16,11 +16,21 @@
                 return false;
             }
             else if(fpwd==null || fpwd==""){
-                alert("Please enter password");
+                alert("Please enter password ");
                 return false;
             }
-            else if(fpwd.length<6 || fpwd.search(/[a-z]/)<0 || fpwd.search(/[0-9]/)<0){
-                alert("Your password must contain one alphabet, one number, and it must contain atleast 6 characters");
+            
+            else if(fpwd.length<6){
+                alert("password is weak");
+                return false;
+            }
+            else if(fpwd.length>6 && fpwd.length<10){
+                alert("password is medium");
+                return false;
+            }
+            
+            else if(fpwd.length<10 || fpwd.search(/[A-Z]/)<0 || fpwd.search(/[a-z]/)<0 || fpwd.search(/[0-9]/)<0 || fpwd.search(/[!@#$%^&*]/)<0){
+                alert("Password must contain atleast 1uppercase, atleast 1lowercase, atleast 1special char, atleast 1digit ");
                 return false;
             }
             else if(spwd==null || spwd==""){
@@ -59,7 +69,8 @@
                 alert("select a gender");
                 return false;
             }
-        
+            
+            
         
             else if(fpwd==spwd){
                 return true;
